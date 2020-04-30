@@ -9,6 +9,7 @@ from flask_cors import CORS
 import src.eventbrite
 import src.events_cache
 import src.events_filter
+import src.weather
 
 
 APP = flask.Flask(__name__,

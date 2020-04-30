@@ -24,7 +24,7 @@ const RecommendationPage = (props) => {
 
   React.useEffect(() => {
     Axios.get(
-      window.location.hostname  + '/conditions'
+      '/conditions'
     ).then(res => {
       const { conditions: { weather, temperature } } = res.data;
       const description = weather.split('-')[1].trim();
@@ -35,7 +35,7 @@ const RecommendationPage = (props) => {
 
   React.useEffect(() => {
     Axios.post(
-      window.location.hostname + '/events/recommended',
+      '/events/recommended',
       {
         tags: Object.keys(tags).filter(tag => tags[tag]),
       },
