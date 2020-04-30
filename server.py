@@ -10,10 +10,11 @@ import src.eventbrite
 import src.events_cache
 import src.events_filter
 
-DEFAULT_PORT_NUM = 5000
 
-APP = flask.Flask(__name__)
-CORS(APP)
+APP = Flask(__name__,
+            static_url_path='',
+            static_folder='frontend/build')
+#CORS(APP)
 
 
 def send_success(data):
@@ -71,4 +72,4 @@ def get_all_events():
 
 
 if __name__ == '__main__':
-    APP.run(port=(sys.argv[1] if len(sys.argv) > 1 else DEFAULT_PORT_NUM))
+    APP.run()
