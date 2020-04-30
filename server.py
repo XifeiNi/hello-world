@@ -26,6 +26,10 @@ def send_error(message):
         '_error': message
     })
 
+@APP.route('/')
+def root():
+    return APP.send_static_file('index.html')
+
 @APP.route('/conditions', methods=['GET'])
 def get_current_conditions():
     conditions = src.weather.get_weather_by_city('sydney').get_json()
