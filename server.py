@@ -11,7 +11,7 @@ import src.events_cache
 import src.events_filter
 
 
-APP = Flask(__name__,
+APP = flask.Flask(__name__,
             static_url_path='',
             static_folder='frontend/build')
 #CORS(APP)
