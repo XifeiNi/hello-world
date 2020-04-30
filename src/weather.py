@@ -115,7 +115,6 @@ def get_weather_by_city(city):
     local_now = datetime.now()
     utcnow = datetime.utcnow()
     utc_offset = (local_now - utcnow).total_seconds()
-
     # extract information from response
     weather_icons = list(map(lambda wc: wc["icon"], response["weather"]))
     weather_conditions = list(map(lambda wc: wc["main"], response["weather"]))
